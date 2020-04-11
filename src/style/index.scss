@@ -1,0 +1,9 @@
+@import '@/style/vars.scss';    
+
+$theme-colors: (
+    'orange': $orange,
+    'dark': $dark,
+) !default;
+
+@import '~bootstrap/scss/bootstrap.scss';
+@import '~bootstrap-vue/src/index.scss';

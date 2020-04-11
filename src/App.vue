@@ -1,28 +1,48 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <main-layout>
+      <router-view></router-view>
+    </main-layout>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import MainLayout from '@/layouts/MainLayout.vue'
+import {scrollToPos} from '@/helpers/scroll-to.js'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    MainLayout
+  },
+  created() {
+    window.scroll = scrollToPos;
   }
 }
 </script>
 
-<style>
+<style lang="scss">
+@import '@/style/font.scss';
+body {
+  margin: 0;
+  padding: 0;
+
+  * {
+      box-sizing: border-box;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: #000;
+}
+
+.cursive {
+  font-family: 'Pacifico', cursive;
 }
 </style>
